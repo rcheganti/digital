@@ -11,11 +11,11 @@ menuToggle?.addEventListener("click", () => {
   menuToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
 });
 
-navLinks.forEach(link => link.addEventListener("click", () => {
-  nav.classList.remove("open");
-  menuToggle?.setAttribute("aria-expanded", "false");
-  menuToggle?.setAttribute("aria-label", "Open navigation menu");
-}));
+const closeDropdowns = (except = null) => { document.querySelectorAll(".nav-dropdown-toggle").forEach(toggle => { if (toggle !== except) { toggle.setAttribute("aria-expanded","false"); toggle.closest(".nav-dropdown")?.querySelector(".dropdown-menu")?.classList.remove("open"); } }); };
+document.querySelectorAll(".nav-dropdown-toggle").forEach(toggle => toggle.addEventListener("click", e => { e.stopPropagation(); const menu=toggle.closest(".nav-dropdown").querySelector(".dropdown-menu"); const open=toggle.getAttribute("aria-expanded")!=="true"; closeDropdowns(toggle); toggle.setAttribute("aria-expanded",String(open)); menu.classList.toggle("open",open); }));
+document.addEventListener("click", e => { if (!e.target.closest(".nav-dropdown")) closeDropdowns(); });
+navLinks.forEach(link => link.addEventListener("click", () => { nav.classList.remove("open"); menuToggle?.setAttribute("aria-expanded","false"); menuToggle?.setAttribute("aria-label","Open navigation menu"); closeDropdowns(); }));
+document.querySelectorAll(".dropdown-menu a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("open"); menuToggle?.setAttribute("aria-expanded","false"); closeDropdowns(); }));
 
 const setActiveNav = () => {
   const y = window.scrollY + (header?.offsetHeight || 76) + 90;
@@ -87,6 +87,7 @@ counters.forEach(el => counterObserver.observe(el));
 
 const filterButtons = document.querySelectorAll(".filter-btn");
 const portfolioItems = document.querySelectorAll(".portfolio-item");
+document.querySelectorAll("[data-portfolio-filter]").forEach(link => link.addEventListener("click", () => { const button=document.querySelector(`.filter-btn[data-filter="${link.dataset.portfolioFilter}"]`); if(button) button.click(); }));
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     filterButtons.forEach(b => b.classList.remove("active"));
