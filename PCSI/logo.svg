@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+<title id="title">PCSI Prem Consultancy Services Israel logo</title>
+<desc id="desc">Professional navy blue and gold recruitment consultancy logo with a career growth symbol and briefcase.</desc>
+<defs>
+  <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#F6B51B"/><stop offset="1" stop-color="#D98B00"/></linearGradient>
+</defs>
+<rect width="720" height="180" rx="20" fill="#ffffff"/>
+<g transform="translate(24 18)">
+  <circle cx="72" cy="72" r="68" fill="#0A2348"/>
+  <path d="M35 104 C38 72 56 55 72 55 C88 55 106 72 109 104" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="72" cy="38" r="13" fill="#fff"/>
+  <path d="M42 91 L62 111 L105 64" fill="none" stroke="url(#gold)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M101 20 L119 2 L119 18 L137 18 L137 36 L121 36 L121 52 L103 52Z" fill="url(#gold)"/>
+  <rect x="102" y="92" width="48" height="32" rx="4" fill="url(#gold)"/>
+  <path d="M114 92 V84 C114 76 138 76 138 84 V92" fill="none" stroke="#0A2348" stroke-width="5"/>
+</g>
+<text x="188" y="84" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#0A2348" letter-spacing="2">PCSI</text>
+<text x="192" y="118" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0A2348" letter-spacing="1.5">PREM CONSULTANCY</text>
+<text x="192" y="148" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#B87800" letter-spacing="1.5">SERVICES ISRAEL</text>
+</svg>
