@@ -60,7 +60,7 @@ Mobile: ${mobile}
 Reason for Contact: ${reason}
 Description: ${description}`;
 
-  const whatsappUrl = `https://wa.me/538657447?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/+972538657447?text=${encodeURIComponent(message)}`;
 
   formMessage.textContent = "Your enquiry is ready to be sent via WhatsApp. Please confirm the message in WhatsApp.";
   window.open(whatsappUrl, "_blank", "noopener");
