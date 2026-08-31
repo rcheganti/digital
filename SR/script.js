@@ -1,5 +1,5 @@
 const properties = [
-  {id:1,name:"Green Heights 2 BHK",location:"Medchal, Hyderabad",type:"Apartment",purpose:"Buy",price:"₹59 Lakh",priceLakh:59,bedrooms:2,bathrooms:2,area:"1,200 sq.ft.",image:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",description:"A modern 2 BHK apartment designed for comfortable family living, with excellent access to everyday amenities and connectivity."},
+  {id:1,name:"Medchal Standalone building",location:"Medchal, Hyderabad",type:"Apartment",purpose:"Buy",price:"₹60 Lakh",priceLakh:60,bedrooms:2,persft:"4999/-",area:"1,200 sq.ft.",image:"images/medchal2bhk1.jpeg",description:"A modern 2 BHK apartment designed for comfortable family living, with excellent access to everyday amenities and connectivity. Near Yashoda Nursing Training Center"},
   {id:2,name:"Luxury Garden Villa",location:"Kompally, Hyderabad",type:"Villa",purpose:"Buy",price:"₹1.65 Crore",priceLakh:165,bedrooms:3,bathrooms:3,area:"2,450 sq.ft.",image:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85",description:"Spacious premium villa with elegant interiors, generous living spaces and a peaceful residential setting."},
   {id:3,name:"High Growth Investment Plot",location:"Shadnagar, Hyderabad",type:"Plot",purpose:"Buy",price:"₹32 Lakh",priceLakh:32,bedrooms:0,bathrooms:0,area:"200 sq.yd.",image:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85",description:"A promising plot opportunity suited for long-term investment and future development in a growing corridor."},
   {id:4,name:"Skyline 3 BHK Residence",location:"Miyapur, Hyderabad",type:"Apartment",purpose:"Buy",price:"₹1.12 Crore",priceLakh:112,bedrooms:3,bathrooms:3,area:"1,850 sq.ft.",image:"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",description:"Well-planned 3 BHK residence with contemporary finishes and convenient urban connectivity."},
@@ -105,6 +105,7 @@ function renderProperties(list = properties){
         <div class="stats">
           ${p.bedrooms ? `<span>🛏 ${p.bedrooms} Beds</span>` : ""}
           ${p.bathrooms ? `<span>◈ ${p.bathrooms} Baths</span>` : ""}
+          ${p.persft ? `<span>● ${p.persft} per sq.ft.</span>` : ""}
           <span>▣ ${p.area}</span>
         </div>
         <p>${p.description}</p>
