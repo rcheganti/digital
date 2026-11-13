@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "pink", "color": "#b0124f", "name": "Telangana Pink" },
+				{ "slug": "saffron", "color": "#f4a300", "name": "Saffron" },
+				{ "slug": "green", "color": "#0b5d4b", "name": "Green" },
+				{ "slug": "cream", "color": "#fff8ee", "name": "Cream" },
+				{ "slug": "ink", "color": "#241a1f", "name": "Ink" }
+			]
+		},
+		"layout": { "contentSize": "820px", "wideSize": "1160px" },
+		"typography": {
+			"fluid": true,
+			"fontFamilies": [
+				{ "slug": "serif", "name": "Serif", "fontFamily": "Georgia, 'Times New Roman', serif" },
+				{ "slug": "sans", "name": "Sans", "fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" }
+			]
+		}
+	},
+	"styles": {
+		"color": { "background": "#fff8ee", "text": "#241a1f" },
+		"elements": { "link": { "color": { "text": "#b0124f" } } }
+	}
+}

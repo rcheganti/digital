@@ -1,0 +1,8 @@
+.ita-gallery-list{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0;padding:0;list-style:none}
+.ita-gallery-list li{position:relative;width:110px;height:110px;border:1px solid #c3c4c7;border-radius:4px;overflow:hidden;cursor:move;background:#f6f7f7}
+.ita-gallery-list img{width:100%;height:100%;object-fit:cover;display:block}
+.ita-gallery-remove{position:absolute;top:4px;right:4px;width:24px;height:24px;border:0;border-radius:50%;background:#b32d2e;color:#fff;cursor:pointer;line-height:22px;font-size:16px;padding:0}
+.ita-table th{width:170px}
+.ita-media-preview img{max-width:260px;height:auto;display:block;margin-bottom:8px;border-radius:4px}
+.ita-settings-section{background:#fff;border:1px solid #c3c4c7;border-radius:4px;padding:4px 20px 12px;margin:16px 0;max-width:900px}
+.ita-settings-section h2{margin-top:14px}
