@@ -9,6 +9,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .property-image { position: relative; overflow: hidden; cursor: pointer; }
+    .property-image img { display: block; width: 100%; height: 240px; object-fit: cover; transition: transform .3s ease; }
+    .property-image:hover img { transform: scale(1.04); }
+    .media-preview {
+      position: absolute; right: 12px; bottom: 12px; z-index: 2;
+      padding: 8px 13px; border-radius: 20px;
+      color: #fff; background: rgba(0,0,0,.78); font-size: 13px;
+    }
+    .modal-media {
+      width: 100%; background: #111; display: flex;
+      align-items: center; justify-content: center; overflow: hidden;
+    }
+    .modal-media img, .modal-media video {
+      display: block; width: 100%; max-height: 75vh;
+      object-fit: contain; margin: auto;
+    }
+    .modal-media:empty { display: none; }
+  </style>
+
 </head>
 <body>
   <header class="header" id="header">
@@ -213,7 +234,7 @@
     <div class="modal-backdrop" id="modalBackdrop"></div>
     <div class="modal-dialog" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-      <img id="modalImage" src="" alt="">
+      <div id="modalMedia" class="modal-media" aria-label="Property photo or video"></div>
       <div class="modal-body">
         <span id="modalType" class="tag"></span>
         <h2 id="modalTitle"></h2>

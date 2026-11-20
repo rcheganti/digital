@@ -1,37 +1,115 @@
 const properties = [
-  {id:1,name:"Medchal Standalone Building",location:"Medchal, Hyderabad",type:"Apartment",purpose:"Buy",price:"₹60 Lakh",priceLakh:60,bedrooms:2,persft:"4999/-",area:"1,200 sq.ft.",image:"images/medchal2bhk1.jpeg",description:"A modern 2 BHK apartment designed for comfortable family living, with excellent access to everyday amenities and connectivity. Near Yashoda Nursing Training Center"},
-  {id:2,name:"Luxury Green Park Villa",location:"Girmapur, Hyderabad",type:"Villa",purpose:"Buy",price:"₹1.5 Crore",priceLakh:150,bedrooms:3,area:"120 sq.yrd. Total sft 1460",persft:"7500/-",image:"images/villaGirmapur.jpeg",description:"Spacious premium villa with elegant interiors, generous living spaces and a peaceful residential setting."},
-  {id:3,name:"High Growth Investment Plot",location:"Yadadri, Hyderabad",type:"Plot",purpose:"Buy",price:"₹13 Lakh",priceLakh:13,bedrooms:0,bathrooms:0,area:"110 sq.yd.",image:"images/openPlot1.jpeg",description:"A promising plot opportunity suited for long-term investment and future development in a growing corridor."},
-  {id:4,name:"High Growth Investement Plot",location:"Shadnagar, Hyderabad",type:"Plot",purpose:"Buy",price:"₹16,09,179 Lakh",priceLakh:1609179,bedrooms:0,bathrooms:0,area:"120 per sq.yd.13299",image:"images/openPlot2.jpeg",youtube:"",description:"A promising plot opportunity suited for long-term investment and future development in a growing corridor."},
-  {id:5,name:"High Growth Investment Plot",location:"Shadnagar, Hyderabad",type:"Plot",purpose:"Buy",price:"₹13 Lakh ",priceLakh:13,bedrooms:0,bathrooms:0,area:"120 sq.yd.",image:"images/openPlot3.jpeg",youtube:"",description:"A promising plot opportunity suited for long-term investment and future development in a growing corridor."}
+  {
+    id: 1,
+    name: "Medchal Standalone Building",
+    location: "Medchal, Hyderabad",
+    type: "Apartment",
+    purpose: "Buy",
+    price: "₹60 Lakh",
+    priceLakh: 60,
+    bedrooms: 2,
+    persft: "4999/-",
+    area: "1,200 sq.ft.",
+    thumbnail: "images/villaGirmapur.jpeg",
+    media: "images/Iconic9 Bhurgula.mp4",
+    mediaType: "video",
+    description: "A modern 2 BHK apartment designed for comfortable family living, with excellent access to everyday amenities and connectivity. Near Yashoda Nursing Training Center"
+  },
+  {
+    id: 2,
+    name: "Luxury Green Park Villa",
+    location: "Girmapur, Hyderabad",
+    type: "Villa",
+    purpose: "Buy",
+    price: "₹1.5 Crore",
+    priceLakh: 150,
+    bedrooms: 3,
+    area: "120 sq.yrd. Total sft 1460",
+    persft: "7500/-",
+    thumbnail: "images/villaGirmapur.jpeg",
+    media: "images/villaGirmapur.jpeg",
+    mediaType: "image",
+    description: "Spacious premium villa with elegant interiors, generous living spaces and a peaceful residential setting."
+  },
+  {
+    id: 3,
+    name: "High Growth Investment Plot",
+    location: "Yadadri, Hyderabad",
+    type: "Plot",
+    purpose: "Buy",
+    price: "₹13 Lakh",
+    priceLakh: 13,
+    bedrooms: 0,
+    bathrooms: 0,
+    area: "110 sq.yd.",
+    thumbnail: "images/villaGirmapur.jpeg",
+    media: "images/openPlot1.jpeg",
+    mediaType: "image",
+    description: "A promising plot opportunity suited for long-term investment and future development in a growing corridor."
+  },
+  {
+    id: 4,
+    name: "High Growth Investment Plot",
+    location: "Shadnagar, Hyderabad",
+    type: "Plot",
+    purpose: "Buy",
+    price: "₹16,09,179",
+    priceLakh: 16.09179,
+    bedrooms: 0,
+    bathrooms: 0,
+    area: "120 sq.yd. | ₹13,299 per sq.yd.",
+    thumbnail: "images/villaGirmapur.jpeg",
+    media: "images/openPlot2.jpeg",
+    mediaType: "image",
+    description: "A promising plot opportunity suited for long-term investment and future development in a growing corridor."
+  },
+  {
+    id: 5,
+    name: "High Growth Investment Plot",
+    location: "Shadnagar, Hyderabad",
+    type: "Plot",
+    purpose: "Buy",
+    price: "₹13 Lakh",
+    priceLakh: 13,
+    bedrooms: 0,
+    bathrooms: 0,
+    area: "120 sq.yd.",
+    thumbnail: "images/villaGirmapur.jpeg",
+    media: "images/openPlot3.jpeg",
+    mediaType: "image",
+    description: "A promising plot opportunity suited for long-term investment and future development in a growing corridor."
+  }
 ];
 
 const grid = document.getElementById("propertyGrid");
 const noResults = document.getElementById("noResults");
 const modal = document.getElementById("propertyModal");
 
-
 let selectedEnquiryProperty = null;
 
-function startEnquiry(id){
+function startEnquiry(id) {
   const p = properties.find(x => x.id === id);
-  if(!p) return;
+  if (!p) return;
+
   selectedEnquiryProperty = p;
   document.getElementById("enquiryProperty").value = `${p.name} — ${p.location}`;
-  document.getElementById("selectedProperty").textContent = `Enquiring about: ${p.name} (${p.location})`;
+  document.getElementById("selectedProperty").textContent =
+    `Enquiring about: ${p.name} (${p.location})`;
   document.getElementById("enquiryInterest").value = p.type;
-  document.getElementById("enquiryMessage").value = `Hi, I am interested in ${p.name} in ${p.location}. Please share the price, availability and site visit details.`;
-  document.getElementById("contact").scrollIntoView({behavior:"smooth", block:"start"});
+  document.getElementById("enquiryMessage").value =
+    `Hi, I am interested in ${p.name} in ${p.location}. Please share the price, availability and site visit details.`;
+
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
   setTimeout(() => document.getElementById("enquiryName").focus(), 500);
 }
 
-function setFieldState(input, errorEl, valid, message=""){
+function setFieldState(input, errorEl, valid, message = "") {
   input.classList.toggle("invalid", !valid);
   input.classList.toggle("valid", valid);
   errorEl.textContent = valid ? "" : message;
 }
 
-function validateEnquiry(){
+function validateEnquiry() {
   const name = document.getElementById("enquiryName");
   const phone = document.getElementById("enquiryPhone");
   const interest = document.getElementById("enquiryInterest");
@@ -58,7 +136,7 @@ document.getElementById("contactForm").addEventListener("submit", e => {
   const note = document.getElementById("formNote");
   note.textContent = "";
 
-  if(!validateEnquiry()){
+  if (!validateEnquiry()) {
     note.textContent = "Please correct the highlighted fields.";
     note.style.color = "#c62828";
     return;
@@ -83,20 +161,26 @@ Requirement: ${message}
 
 Please contact me with more details.`;
 
-  window.open(`https://wa.me/919177440140?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+  window.open(`https://wa.me/919177440140?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener");
 });
 
-["enquiryName","enquiryPhone","enquiryInterest","enquiryProperty","enquiryMessage"].forEach(id => {
-  document.getElementById(id).addEventListener("input", () => validateEnquiry());
-});
+["enquiryName", "enquiryPhone", "enquiryInterest", "enquiryProperty", "enquiryMessage"]
+  .forEach(id => {
+    document.getElementById(id).addEventListener("input", () => validateEnquiry());
+  });
 
-function renderProperties(list = properties){
+function renderProperties(list = properties) {
   grid.innerHTML = list.map(p => `
     <article class="property-card">
-      <div class="property-image">
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
+      <div class="property-image" role="button" tabindex="0"
+           aria-label="Open ${p.name} media"
+           onclick="openModal(${p.id})"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(${p.id})}">
+        <img src="${p.thumbnail}" alt="${p.name}" loading="lazy">
         <span class="tag">${p.type}</span>
+        <span class="media-preview">${p.mediaType === "video" ? "▶ Play Video" : "View Image"}</span>
       </div>
+
       <div class="property-body">
         <h3>${p.name}</h3>
         <div class="location">⌖ ${p.location}</div>
@@ -113,20 +197,41 @@ function renderProperties(list = properties){
           <button class="btn btn-whatsapp" type="button" onclick="startEnquiry(${p.id})">WhatsApp</button>
         </div>
       </div>
-    </article>`).join("");
+    </article>
+  `).join("");
+
   noResults.hidden = list.length !== 0;
 }
 
-function whatsappLink(p){
+function whatsappLink(p) {
   const msg = `Hi Sowmya Realestate, I am interested in ${p.name} in ${p.location}. Please share more details.`;
   return `https://wa.me/919177440140?text=${encodeURIComponent(msg)}`;
 }
 
-function openModal(id){
+function openModal(id) {
   const p = properties.find(x => x.id === id);
-  if(!p) return;
-  document.getElementById("modalImage").src = p.image;
-  document.getElementById("modalImage").alt = p.name;
+  if (!p) return;
+
+  const mediaContainer = document.getElementById("modalMedia");
+  // Stop and clear any video from the previously opened property.
+  mediaContainer.replaceChildren();
+
+  if (p.mediaType === "video") {
+    const video = document.createElement("video");
+    video.src = p.media;
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.setAttribute("aria-label", `${p.name} video`);
+    mediaContainer.appendChild(video);
+  } else {
+    const image = document.createElement("img");
+    image.src = p.media;
+    image.alt = p.name;
+    mediaContainer.appendChild(image);
+  }
+
   document.getElementById("modalType").textContent = p.type;
   document.getElementById("modalTitle").textContent = p.name;
   document.getElementById("modalLocation").textContent = "⌖ " + p.location;
@@ -134,25 +239,41 @@ function openModal(id){
   document.getElementById("modalStats").innerHTML =
     `${p.bedrooms ? `<span>🛏 ${p.bedrooms} Bedrooms</span>` : ""}
      ${p.bathrooms ? `<span>◈ ${p.bathrooms} Bathrooms</span>` : ""}
-     <span>▣ ${p.area}</span><span>● ${p.purpose}</span>`;
+     <span>▣ ${p.area}</span>
+     <span>● ${p.purpose}</span>`;
   document.getElementById("modalDescription").textContent = p.description;
-  document.getElementById("modalWhatsapp").onclick = (e) => {
+
+  document.getElementById("modalWhatsapp").onclick = e => {
     e.preventDefault();
     closeModal();
     startEnquiry(p.id);
   };
+
   modal.classList.add("open");
-  modal.setAttribute("aria-hidden","false");
+  modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
-function closeModal(){
+
+function closeModal() {
+  const mediaContainer = document.getElementById("modalMedia");
+  const video = mediaContainer.querySelector("video");
+  if (video) {
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+  }
+  mediaContainer.replaceChildren();
+
   modal.classList.remove("open");
-  modal.setAttribute("aria-hidden","true");
+  modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
+
 document.getElementById("modalClose").addEventListener("click", closeModal);
 document.getElementById("modalBackdrop").addEventListener("click", closeModal);
-document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+});
 
 document.getElementById("searchForm").addEventListener("submit", e => {
   e.preventDefault();
@@ -160,20 +281,25 @@ document.getElementById("searchForm").addEventListener("submit", e => {
   const type = document.getElementById("typeFilter").value;
   const budget = document.getElementById("budgetFilter").value;
   const purpose = document.getElementById("purposeFilter").value;
+
   const result = properties.filter(p => {
     const locationMatch = !location || p.location.toLowerCase().includes(location);
     const typeMatch = !type || p.type === type;
     const purposeMatch = !purpose || p.purpose === purpose;
     let budgetMatch = true;
-    if(budget === "50") budgetMatch = p.priceLakh < 50;
-    if(budget === "100") budgetMatch = p.priceLakh >= 50 && p.priceLakh <= 100;
-    if(budget === "200") budgetMatch = p.priceLakh > 100 && p.priceLakh <= 200;
-    if(budget === "999") budgetMatch = p.priceLakh > 200;
+
+    if (budget === "50") budgetMatch = p.priceLakh < 50;
+    if (budget === "100") budgetMatch = p.priceLakh >= 50 && p.priceLakh <= 100;
+    if (budget === "200") budgetMatch = p.priceLakh > 100 && p.priceLakh <= 200;
+    if (budget === "999") budgetMatch = p.priceLakh > 200;
+
     return locationMatch && typeMatch && purposeMatch && budgetMatch;
   });
+
   renderProperties(result);
-  document.getElementById("properties").scrollIntoView({behavior:"smooth",block:"start"});
+  document.getElementById("properties").scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
 document.getElementById("resetFilters").addEventListener("click", () => {
   document.getElementById("searchForm").reset();
   renderProperties();
@@ -181,11 +307,14 @@ document.getElementById("resetFilters").addEventListener("click", () => {
 
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
+
 menuToggle.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", open);
 });
-document.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
 
+document.querySelectorAll(".nav a").forEach(a => {
+  a.addEventListener("click", () => nav.classList.remove("open"));
+});
 
 renderProperties();
