@@ -592,7 +592,7 @@ function renderProperties(list = properties) {
 }
 
 function whatsappLink(p) {
-  const msg = `Hi Sowmya Realestate, I am interested in ${p.name} in ${p.location}. Please share more details.`;
+  const msg = `Hi Realestate, I am interested in ${p.name} in ${p.location}. Please share more details.`;
   return `https://wa.me/919177440140?text=${encodeURIComponent(msg)}`;
 }
 
