@@ -227,6 +227,106 @@ Choose Abharana for a promising investment opportunity and a better lifestyle ne
 
 Contact Us Today for Plot Availability, EMI Details & Site Visit!`
   },
+  {
+    id: 4,
+    name: "Iconic 2, 3, 4 & 5 – Premium DTCP & RERA Approved Open Plots at Shadnagar",
+    location: "Annaram Village, Shadnagar",
+    type: "Plot",
+    purpose: "Buy",
+    price: "₹28 Lakh",
+    priceLakh: 28,
+    bedrooms: 0,
+    persqrd: "18699/-",
+    area: "150 sq.yd.",
+    thumbnail: "images/Iiconic12345Thumb.jpeg",
+    gallery: [
+      { type: "image", src: "images/iconic12345/iconic12345.jpeg" },
+      // Add more photos/videos for this property below:
+      // { type: "image", src: "images/medchal-interior.jpeg" },
+      // { type: "video", src: "images/medchal-walkthrough.mp4" }
+    ],
+    description: `Your Perfect Destination for Smart Investment & Future Growth!
+
+Discover Iconic 2, 3, 4 & 5, a premium open plot venture located at Annaram Village, Shadnagar. Spread across a vast 150-acre development, this project offers an excellent opportunity for those looking to invest in land or build their dream home.
+
+With DTCP and RERA approvals, convenient bank loan facilities, and well-planned residential plots, Iconic 2, 3, 4 & 5 is an ideal choice for your future investment.
+
+Project Highlights
+
+•⁠  ⁠Project Name: Iconic 2, 3, 4 & 5
+•⁠  ⁠Location: Annaram Village, Shadnagar
+•⁠  ⁠Total Project Area: 150 Acres
+•⁠  ⁠Approvals: DTCP & RERA Approved
+•⁠  ⁠Plot Size: 150 Square Yards
+•⁠  ⁠Price: ₹18,699 per Square Yard
+•⁠  ⁠Bank Loan: IDBI Bank Loan Available
+
+Why Choose Iconic 2, 3, 4 & 5?
+
+•⁠  ⁠DTCP & RERA Approved Project
+•⁠  ⁠Spacious 150 Sq. Yards Plots
+•⁠  ⁠Located at Annaram Village, Shadnagar
+•⁠  ⁠Large-Scale 150-Acre Development
+•⁠  ⁠IDBI Bank Loan Facility Available
+•⁠  ⁠Suitable for Investment and Future Home Construction
+
+Book Your Plot Today!
+
+Invest in a promising location and take a step towards securing your future with Iconic 2, 3, 4 & 5 at Shadnagar.
+
+For Site Visits & More Details, Contact Us Today!`
+  },
+  {
+    id: 5,
+    name: "Spring City – Premium DTCP & RERA Approved Open Plots at Shadnagar",
+    location: "Chinchod Village, Shadnagar",
+    type: "Plot",
+    purpose: "Buy",
+    price: "₹16 Lakh",
+    priceLakh: 16,
+    bedrooms: 0,
+    persqrd: "10899/-",
+    area: "150 sq.yd.",
+    thumbnail: "images/SpringCityThumb.jpeg",
+    gallery: [
+      { type: "image", src: "images/SpringCity/SpringCity.jpeg" },
+      // Add more photos/videos for this property below:
+      // { type: "image", src: "images/medchal-interior.jpeg" },
+      // { type: "video", src: "images/medchal-walkthrough.mp4" }
+    ],
+    description: `Your Perfect Destination for Smart Investment & Future Growth!
+
+Discover Iconic 2, 3, 4 & 5, a premium open plot venture located at Annaram Village, Shadnagar. Spread across a vast 150-acre development, this project offers an excellent opportunity for those looking to invest in land or build their dream home.
+
+With DTCP and RERA approvals, convenient bank loan facilities, and well-planned residential plots, Iconic 2, 3, 4 & 5 is an ideal choice for your future investment.
+
+Project Highlights
+
+•⁠  ⁠Project Name: Iconic 2, 3, 4 & 5
+•⁠  ⁠Location: Annaram Village, Shadnagar
+•⁠  ⁠Total Project Area: 150 Acres
+•⁠  ⁠Approvals: DTCP & RERA Approved
+•⁠  ⁠Plot Size: 150 Square Yards
+•⁠  ⁠Price: ₹18,699 per Square Yard
+•⁠  ⁠Bank Loan: IDBI Bank Loan Available
+
+Why Choose Iconic 2, 3, 4 & 5?
+
+•⁠  ⁠DTCP & RERA Approved Project
+•⁠  ⁠Spacious 150 Sq. Yards Plots
+•⁠  ⁠Located at Annaram Village, Shadnagar
+•⁠  ⁠Large-Scale 150-Acre Development
+•⁠  ⁠IDBI Bank Loan Facility Available
+•⁠  ⁠Suitable for Investment and Future Home Construction
+
+Book Your Plot Today!
+
+Invest in a promising location and take a step towards securing your future with Iconic 2, 3, 4 & 5 at Shadnagar.
+
+For Site Visits & More Details, Contact Us Today!`
+  }
+
+
   /*{
     id: 2,
     name: "Luxury Green Park Villa",
@@ -374,7 +474,7 @@ document.getElementById("contactForm").addEventListener("submit", e => {
   const message = document.getElementById("enquiryMessage").value.trim();
 
   const whatsappMessage =
-`Hi Sowmya Realestate,
+    `Hi Sowmya Realestate,
 
 I would like to enquire about a property.
 
@@ -478,8 +578,8 @@ function renderProperties(list = properties) {
         </div>
         <p>${getDescriptionPreview(p.description, 25).text}</p>
         ${p.description
-          ? `<button class="read-more-btn" type="button" onclick="event.stopPropagation(); openModal(${p.id})">Read more</button>`
-          : ""}
+      ? `<button class="read-more-btn" type="button" onclick="event.stopPropagation(); openModal(${p.id})">Read more</button>`
+      : ""}
         <div class="card-actions">
           <button class="btn btn-navy" onclick="openModal(${p.id})">View Details</button>
           <button class="btn btn-whatsapp" type="button" onclick="startEnquiry(${p.id})">WhatsApp</button>
@@ -656,7 +756,8 @@ document.getElementById("searchForm").addEventListener("submit", e => {
     const typeMatch = !type || p.type === type;
     const purposeMatch = !purpose || p.purpose === purpose;
     let budgetMatch = true;
-
+    if (budget === "15") budgetMatch = p.priceLakh < 15;
+    if (budget === "20") budgetMatch = p.priceLakh < 20;
     if (budget === "50") budgetMatch = p.priceLakh < 50;
     if (budget === "100") budgetMatch = p.priceLakh >= 50 && p.priceLakh <= 100;
     if (budget === "200") budgetMatch = p.priceLakh > 100 && p.priceLakh <= 200;
