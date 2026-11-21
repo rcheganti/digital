@@ -474,7 +474,7 @@ document.getElementById("contactForm").addEventListener("submit", e => {
   const message = document.getElementById("enquiryMessage").value.trim();
 
   const whatsappMessage =
-    `Hi Sowmya Realestate,
+    `Hi Realestate,
 
 I would like to enquire about a property.
 
