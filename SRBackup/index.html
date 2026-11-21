@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sowmya Realestate - Premium residential and investment properties in prime locations.">
+  <title>Sowmya Realestate | Find Your Dream Property</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .property-image { position: relative; overflow: hidden; cursor: pointer; }
+    .property-image img { display: block; width: 100%; height: 240px; object-fit: cover; transition: transform .3s ease; }
+    .property-image:hover img { transform: scale(1.04); }
+    .media-preview {
+      position: absolute; right: 12px; bottom: 12px; z-index: 2;
+      padding: 8px 13px; border-radius: 20px;
+      color: #fff; background: rgba(0,0,0,.78); font-size: 13px;
+    }
+    .modal-media {
+      width: 100%; background: #111; display: flex;
+      align-items: center; justify-content: center; overflow: hidden;
+    }
+    .modal-media img, .modal-media video {
+      display: block; width: 100%; max-height: 75vh;
+      object-fit: contain; margin: auto;
+    }
+    .modal-media:empty { display: none; }
+  </style>
+
+
+  <!-- Meta Pixel: set your real Pixel ID in config.js before publishing. -->
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var pixelId = window.ICONIC6_META_PIXEL_ID;
+      if (!pixelId || pixelId === "PASTE_YOUR_META_PIXEL_ID_HERE") return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+      (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', pixelId);
+      fbq('track', 'PageView');
+    })();
+  </script>
+
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">
+        <span class="brand-mark">SR</span>
+        <span><strong>Sowmya</strong> Realestate</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#properties">Properties</a>
+        <a href="#about">About Us</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">PREMIUM PROPERTY SOLUTIONS</span>
+          <h1>Find Your Dream Property with <span>Sowmya Realestate</span></h1>
+          <p>Discover premium residential and investment properties in prime locations.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#properties">View Properties <span>→</span></a>
+            <a class="btn btn-light-outline" href="#contact">Get Free Consultation</a>
+          </div>
+          <div class="trust-row">
+            <span>✓ Trusted Property Solutions</span>
+            <span>✓ Verified Properties</span>
+            <span>✓ Personalized Assistance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="search-card">
+          <div class="search-heading">
+            <span class="eyebrow dark">PROPERTY SEARCH</span>
+            <h2>Find a property that fits you</h2>
+          </div>
+          <form id="searchForm" class="search-grid">
+            <label>Location
+              <input id="locationFilter" type="text" placeholder="e.g. Medchal, Hyderabad">
+            </label>
+            <label>Property Type
+              <select id="typeFilter">
+                <option value="">Any Type</option>
+                <option>Apartment</option>
+                <option>Villa</option>
+                <option>Plot</option>
+                <option>Commercial</option>
+              </select>
+            </label>
+            <label>Budget
+              <select id="budgetFilter">
+                <option value="">Any Budget</option>
+                <option value="15">Under ₹15 Lakh</option>
+                <option value="20">Under ₹20 Lakh</option>
+                <option value="50">Under ₹50 Lakh</option>
+                <option value="100">₹50 Lakh – ₹1 Crore</option>
+                <option value="200">₹1 – ₹2 Crore</option>
+                <option value="999">Above ₹2 Crore</option>
+              </select>
+            </label>
+            <label>Buy / Rent
+              <select id="purposeFilter">
+                <option value="">Buy or Rent</option>
+                <option>Buy</option>
+                <option>Rent</option>
+              </select>
+            </label>
+            <button class="btn btn-navy search-btn" type="submit">Search Properties</button>
+          </form>
+          <button class="reset-link" id="resetFilters" type="button">Reset filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section properties-section" id="properties">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow dark">OUR PROPERTIES</span>
+            <h2>Featured Properties</h2>
+          </div>
+          <p>Explore handpicked homes, plots and investment opportunities selected for quality and value.</p>
+        </div>
+        <div id="propertyGrid" class="property-grid"></div>
+        <div id="noResults" class="no-results" hidden>
+          <h3>No matching properties found</h3>
+          <p>Try changing your filters and search again.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=85" alt="Modern property building">
+          <div class="experience-card"><strong>Trusted</strong><span>Property Assistance</span></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow dark">ABOUT SOWMYA REALESTATE</span>
+          <h2>Property decisions made simple, clear and confident.</h2>
+          <p>We help buyers and investors discover suitable properties with transparent guidance and personalized assistance from enquiry to site visit and beyond.</p>
+          <p>Whether you are looking for a home, a plot for future growth, or an investment opportunity, our focus is to connect you with the right property for your goals.</p>
+          <a href="#contact" class="btn btn-navy">Talk to Us <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-section" id="why-us">
+      <div class="container">
+        <div class="center-head">
+          <span class="eyebrow dark">WHY CHOOSE US</span>
+          <h2>A better way to discover property</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit"><div class="icon">✓</div><h3>Verified Options</h3><p>Property opportunities are presented with clear, useful information to help you shortlist confidently.</p></article>
+          <article class="benefit"><div class="icon">◆</div><h3>Prime Locations</h3><p>Explore residential and investment options in locations with strong connectivity and potential.</p></article>
+          <article class="benefit"><div class="icon">↗</div><h3>Investment Focus</h3><p>Get practical guidance while comparing properties for both living and investment purposes.</p></article>
+          <article class="benefit"><div class="icon">♡</div><h3>Personal Assistance</h3><p>From first enquiry to site visit, get responsive and personalized support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-box">
+        <div><span class="eyebrow">READY TO FIND YOUR PROPERTY?</span><h2>Let's find the right opportunity for you.</h2></div>
+        <a href="#contact" class="btn btn-gold">Get Free Consultation →</a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow dark">CONTACT US</span>
+          <h2>Let’s discuss your property requirement.</h2>
+          <p>Tell us what you are looking for and we’ll help you explore suitable options.</p>
+          <div class="contact-info">
+            <div><span class="contact-icon">☎</span><div><small>Call / WhatsApp</small><strong>+91 79819 20844</strong></div></div>
+            <div><span class="contact-icon">⌖</span><div><small>Service Area</small><strong>Hyderabad & Surrounding Areas</strong></div></div>
+            <div><span class="contact-icon">✉</span><div><small>Email</small><strong>smyravi@gmail.com</strong></div></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-title">Property Enquiry</div>
+          <p class="selected-property" id="selectedProperty">Please select a property to enquire about.</p>
+
+          <label>Full Name *
+            <input type="text" id="enquiryName" name="name" placeholder="Enter your full name" required minlength="2">
+            <small class="field-error" id="nameError"></small>
+          </label>
+
+          <label>Phone Number *
+            <input type="tel" id="enquiryPhone" name="phone" placeholder="Enter 10-digit mobile number" required inputmode="numeric" maxlength="10">
+            <small class="field-error" id="phoneError"></small>
+          </label>
+
+          <label>Interested In *
+            <select id="enquiryInterest" name="interest" required>
+              <option value="">Select property type</option>
+              <option>Apartment</option><option>Villa</option><option>Plot</option><option>Commercial</option>
+            </select>
+            <small class="field-error" id="interestError"></small>
+          </label>
+
+          <label>Property *
+            <input type="text" id="enquiryProperty" name="property" placeholder="Select a property from above" readonly required>
+            <small class="field-error" id="propertyError"></small>
+          </label>
+
+          <label>Purchase Purpose *
+            <select id="enquiryPurpose" name="purchase_purpose" required>
+              <option value="">Select your purpose</option>
+              <option value="Investment">Investment</option>
+              <option value="Build a house">Build a house</option>
+              <option value="Future investment">Future investment</option>
+            </select>
+            <small class="field-error" id="purposeError"></small>
+          </label>
+
+          <label>Buying Plan *
+            <select id="buyingTimeline" name="buying_timeline" required>
+              <option value="">When are you planning to buy?</option>
+              <option value="Immediately">Immediately</option>
+              <option value="Within 1 month">Within 1 month</option>
+              <option value="Within 3 months">Within 3 months</option>
+              <option value="Just exploring">Just exploring</option>
+            </select>
+            <small class="field-error" id="timelineError"></small>
+          </label>
+
+          <label>Would you like a site visit?
+            <select id="siteVisitInterest" name="site_visit_interest">
+              <option value="Yes">Yes</option>
+              <option value="Later">Later</option>
+              <option value="Need more details first">Need more details first</option>
+            </select>
+          </label>
+
+          <label>Your Requirement
+            <textarea id="enquiryMessage" name="message" rows="3" placeholder="Any questions or preferred plot details (optional)"></textarea>
+          </label>
+
+          <button class="btn btn-navy" id="enquirySubmit" type="submit">Submit Enquiry →</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+          <small class="form-privacy">By submitting, you agree to be contacted about this property enquiry.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><a href="#home" class="brand footer-brand"><span class="brand-mark">SR</span><span><strong>Sowmya</strong> Realestate</span></a><p>Premium property solutions with personalized assistance.</p></div>
+      <div class="footer-links"><a href="#properties">Properties</a><a href="#about">About</a><a href="#why-us">Why Us</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="container copyright">© 2026 Sowmya Realestate. All rights reserved.</div>
+  </footer>
+
+  <div class="modal" id="propertyModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalMedia" class="modal-media" aria-label="Property photo or video"></div>
+      <div class="modal-body">
+        <span id="modalType" class="tag"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalLocation" class="modal-location"></p>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-stats" id="modalStats"></div>
+        <p id="modalDescription"></p>
+        <a id="modalWhatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <a class="floating-whatsapp" href="https://wa.me/7981920844?text=Hi%20Sowmya%20Realestate,%20I%20am%20interested%20the%20properties%20listed%20in%20the%20website." target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>
+  <!--<a class="floating-whatsapp" href="https://wa.me/7981920844?text=Hi%20Sowmya%20Realestate,%20I%20am%20interested%20in%20your%20properties." target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>-->
+  <script src="script.js"></script>
+</body>
+</html>

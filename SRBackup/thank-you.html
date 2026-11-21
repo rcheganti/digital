@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You – Iconic 6 Enquiry</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var pixelId = window.ICONIC6_META_PIXEL_ID;
+      if (!pixelId || pixelId === "PASTE_YOUR_META_PIXEL_ID_HERE") return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+      (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', pixelId);
+      fbq('track', 'PageView');
+      // Fire Lead only after the successful form submission flag is present.
+      if (sessionStorage.getItem('iconic6_lead_submitted') === '1') {
+        fbq('track', 'Lead', {content_name: sessionStorage.getItem('iconic6_lead_property') || 'Iconic 6'});
+        sessionStorage.removeItem('iconic6_lead_submitted');
+        sessionStorage.removeItem('iconic6_lead_property');
+      }
+    })();
+  </script>
+  <style>
+    body{min-height:100vh;display:grid;place-items:center;background:#f6f7f9;padding:24px}
+    .thanks-card{width:min(620px,100%);background:#fff;border-radius:12px;padding:42px 30px;text-align:center;box-shadow:0 18px 55px rgba(7,26,53,.12)}
+    .thanks-icon{width:66px;height:66px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:#e8f7ed;color:#16803c;font-size:34px}
+    .thanks-card h1{font-size:clamp(30px,5vw,44px);color:#071a35;margin-bottom:14px}
+    .thanks-card p{color:#596477;margin-bottom:24px}
+  </style>
+</head>
+<body>
+  <main class="thanks-card">
+    <div class="thanks-icon" aria-hidden="true">✓</div>
+    <span class="eyebrow dark">ICONIC 6 – ENQUIRY RECEIVED</span>
+    <h1>Thank You!</h1>
+    <p>Your enquiry has been submitted successfully. Our team will contact you to share the project details and site-visit information.</p>
+    <a class="btn btn-navy" href="index.html">Back to Website</a>
+    <p style="margin-top:20px;margin-bottom:0">Need immediate assistance? Call / WhatsApp <strong>+91 79819 20844</strong>.</p>
+  </main>
+</body>
+</html>
