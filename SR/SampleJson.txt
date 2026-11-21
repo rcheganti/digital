@@ -1,0 +1,50 @@
+ {
+    id: 5,
+    name: "Spring City – Premium DTCP & RERA Approved Open Plots at Shadnagar",
+    location: "Chinchod Village, Shadnagar",
+    type: "Plot",
+    purpose: "Buy",
+    price: "₹16 Lakh",
+    priceLakh: 16,
+    bedrooms: 0,
+    persqrd: "10899/-",
+    area: "150 sq.yd.",
+    thumbnail: "images/Iiconic12345Thumb.jpeg",
+    gallery: [
+      { type: "video", src: "images/SpringCity/SpringCityThumb.jpeg" },
+      // Add more photos/videos for this property below:
+      // { type: "image", src: "images/medchal-interior.jpeg" },
+      // { type: "video", src: "images/medchal-walkthrough.mp4" }
+    ],
+    description: `Your Perfect Destination for Smart Investment & Future Growth!
+
+Discover Iconic 2, 3, 4 & 5, a premium open plot venture located at Annaram Village, Shadnagar. Spread across a vast 150-acre development, this project offers an excellent opportunity for those looking to invest in land or build their dream home.
+
+With DTCP and RERA approvals, convenient bank loan facilities, and well-planned residential plots, Iconic 2, 3, 4 & 5 is an ideal choice for your future investment.
+
+Project Highlights
+
+•⁠  ⁠Project Name: Iconic 2, 3, 4 & 5
+•⁠  ⁠Location: Annaram Village, Shadnagar
+•⁠  ⁠Total Project Area: 150 Acres
+•⁠  ⁠Approvals: DTCP & RERA Approved
+•⁠  ⁠Plot Size: 150 Square Yards
+•⁠  ⁠Price: ₹18,699 per Square Yard
+•⁠  ⁠Bank Loan: IDBI Bank Loan Available
+
+Why Choose Iconic 2, 3, 4 & 5?
+
+•⁠  ⁠DTCP & RERA Approved Project
+•⁠  ⁠Spacious 150 Sq. Yards Plots
+•⁠  ⁠Located at Annaram Village, Shadnagar
+•⁠  ⁠Large-Scale 150-Acre Development
+•⁠  ⁠IDBI Bank Loan Facility Available
+•⁠  ⁠Suitable for Investment and Future Home Construction
+
+Book Your Plot Today!
+
+Invest in a promising location and take a step towards securing your future with Iconic 2, 3, 4 & 5 at Shadnagar.
+
+For Site Visits & More Details, Contact Us Today!`
+  }
+  
