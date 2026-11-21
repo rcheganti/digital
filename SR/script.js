@@ -486,7 +486,7 @@ Requirement: ${message}
 
 Please contact me with more details.`;
 
-  window.open(`https://wa.me/919177440140?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener");
+  window.open(`https://wa.me/7981920844?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener");
 });
 
 ["enquiryName", "enquiryPhone", "enquiryInterest", "enquiryProperty", "enquiryMessage"]
@@ -593,7 +593,7 @@ function renderProperties(list = properties) {
 
 function whatsappLink(p) {
   const msg = `Hi Realestate, I am interested in ${p.name} in ${p.location}. Please share more details.`;
-  return `https://wa.me/919177440140?text=${encodeURIComponent(msg)}`;
+  return `https://wa.me/7981920844?text=${encodeURIComponent(msg)}`;
 }
 
 let activeGalleryProperty = null;
